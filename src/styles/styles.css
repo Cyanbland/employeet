@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,900&display=swap');
 
+/* 
+
+COLOR PALLETE
+#222831
+#393e46
+#00adb5
+#dddddd
+#eeeeee
+
+
+
+*/
+
 html {
     scroll-behavior: smooth !important;
 }
@@ -95,8 +108,6 @@ body {
     word-wrap: break-word;
 }
 
-
-
 #settings-btn {
     background-color: Transparent;
     margin: 0px;
@@ -109,16 +120,16 @@ body {
     color: #eeeeee;
 }
 
-
-
 .start-container {
     display: flex;
     align-items: center;
     justify-items: center;
+    justify-content: space-between;
+    margin-top: 3%;
 }
 
 .agreement-img-box {
-    width: 40%;
+    flex-basis: 50%;
 }
 
 #img-agreement {
@@ -133,6 +144,63 @@ body {
     animation-timing-function: cubic-bezier(.2,.3,.9,1);
     animation-fill-mode: forwards;
 }
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 40%;
+    justify-content: center;
+    background-color: #00adb5;
+    border: 4px solid #00adb5;
+    border-radius: 10px;
+    margin-right: 4%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.18), 0 3px 6px rgba(0,0,0,0.24);
+    animation-name: sweep;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    animation-timing-function: cubic-bezier(.2,.3,.9,1);
+    animation-fill-mode: forwards;
+    transition: 0.9s;
+    
+}
+
+.introduction h1, h2 {
+	color:#393e46;
+	text-decoration: none;
+    font-size: 72px;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 0px;
+    word-wrap: break-word;
+    line-height: 60px;
+    letter-spacing: 4px;
+    margin: 6%;
+    margin-bottom: 2%;
+}
+
+.introduction h2 {
+    font-size: 50px;
+    letter-spacing: 2px;
+    line-height: 60px;
+    margin-top: 2%;
+    margin-bottom: 6%;
+
+    
+}
+
+.introduction mark {
+    color: #dddddd;
+    background-color: transparent;
+    font-style: italic;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px #222831, -1px -1px #444;
+
+    
+}
+
+
 
 @keyframes sweep {
     0% {
@@ -216,6 +284,14 @@ body {
         font-size: 14px;
     }
 
+    .introduction h1, h2 {
+        font-size: 50px;
+    }
+
+    .introduction h2 {
+        font-size: 40px;
+    }
+
 }
 
 
@@ -252,5 +328,13 @@ body {
 
     #handshake-icon {
         font-size: 18px;
+    }
+
+    .introduction h1, h2 {
+        font-size: 30px;
+    }
+
+    .introduction h2 {
+        font-size: 20px;
     }
 }
