@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,900&display=swap');
 
 html {
     scroll-behavior: smooth !important;
 }
 
 body {
-	font-family: Montserrat, Arial, Helvetica, sans-serif;
+	font-family: Roboto, Montserrat, Arial, Helvetica, sans-serif;
 	font-size:16px;
 	line-height:1.6em;
     margin:0;
@@ -23,9 +24,31 @@ body {
     display: flex;
     background-color: #222831;
     padding: 10 40px;
-    flex-basis: 100%;
+    width: 100%;
     justify-content: space-between;
     text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.20), 0 3px 6px rgba(0,0,0,0.28);
+    align-items: center;
+}
+
+.left-side {
+    display: flex;
+    padding-right: 50%;
+    margin: 0px 10px 0px 10px;
+    align-items: center;
+}
+
+.left-side h1 {
+    color: #00adb5;
+    font-size: 32px;
+    padding: 0px;
+}
+
+#handshake-icon {
+    color: #00adb5;
+    padding-left: 10px;
+    font-size: 30px;
+    height: 35%;
 }
 
 #top-navbar ul {
@@ -34,21 +57,28 @@ body {
     list-style: none;
     text-align: center;
     flex-basis: 100%;
-
+    justify-content: center;
+    align-items: center;
 }
 
-#top-navbar h1 {
-    color: #eeeeee;
-    flex-grow: 2;
-
-}
 
 #top-navbar li {
-    padding: 10px;
+    padding: 10px 20px 2px 20px;
     align-content: center;
     text-align: center;
     margin: 12px;
-    
+    border: 10px;
+    height: 100%;
+    transition: 0.3s;
+
+}
+
+#top-navbar li:hover {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #eeeeee;
+    background-color: #393e46;
+    text-decoration: none;
 }
 
 #top-navbar a {
@@ -60,6 +90,8 @@ body {
     padding-right: 0px;
     word-wrap: break-word;
 }
+
+
 
 #settings-btn {
     background-color: Transparent;
