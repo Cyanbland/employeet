@@ -3931,10 +3931,13 @@ const employeesTable = document.getElementById("employees-table");
 const preferencesBtn = document.getElementById("settings-btn");
 const tableCells = document.getElementsByClassName("mdc-data-table__cell");
 
+
+
 var currentPage = 1;
 var menu = new MDCMenu(document.querySelector('.mdc-menu'));
 menu.open = false;
 var status = menu.open;
+
 
 handlePages();
 
@@ -3955,7 +3958,6 @@ employeesTable.addEventListener("mouseover", function() {
 
 firstPageBtn.addEventListener("click", function () {
     currentPage = 1;
-    console.log(currentPage);
     handlePages();
 });
 
@@ -3969,7 +3971,6 @@ previousPageBtn.addEventListener("click", function () {
 nextPageBtn.addEventListener("click", function () {
     if (currentPage < calculatePages()) {
         currentPage++;
-        console.log(currentPage);
         handlePages();
     }
 
@@ -3977,7 +3978,6 @@ nextPageBtn.addEventListener("click", function () {
 
 lastPageBtn.addEventListener("click", function () {
     currentPage = calculatePages();
-    console.log(currentPage);
     handlePages();
 });
 

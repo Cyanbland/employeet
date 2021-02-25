@@ -11,10 +11,13 @@ const employeesTable = document.getElementById("employees-table");
 const preferencesBtn = document.getElementById("settings-btn");
 const tableCells = document.getElementsByClassName("mdc-data-table__cell");
 
+
+
 var currentPage = 1;
 var menu = new MDCMenu(document.querySelector('.mdc-menu'));
 menu.open = false;
 var status = menu.open;
+
 
 handlePages();
 

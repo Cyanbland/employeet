@@ -1,3 +1,17 @@
+const autoUpdateCheckbox = document.getElementById("autoupdate-option");
+const autoUpdateBtn = document.getElementById("autoupdate-btn");
+
+autoUpdateCheckbox.addEventListener("change", function() {
+    var autoUpdateCheckboxStatus = autoUpdateCheckbox.checked;
+    if (autoUpdateCheckboxStatus == true) {
+        setInterval(function() {
+            console.log("Fetching data automatically");
+            createGetEmployeesRequest();
+        }, 10000)
+    }
+    console.log("Fetching data automatically 2");
+});
+
 var request = new XMLHttpRequest();
 
 createGetEmployeesRequest();
