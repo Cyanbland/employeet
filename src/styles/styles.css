@@ -570,6 +570,22 @@ a.anchor-cadastro {
         font-size: 48px;
     }
 
+    .add-name, .add-age, .add-salary, .delete-name, .text-input {
+        padding: 4px, 4px;
+        font-size: 14px;
+        width: 70%;
+        align-self: center;
+    }
+
+    .label {
+        margin-left: 15%;
+    }
+
+    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label  {
+        font-size: 16px;
+        transition: 0.4s;
+    }
+
 
 }
 
