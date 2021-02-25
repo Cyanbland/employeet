@@ -24,7 +24,7 @@
 
             <li><a href="#">Início</a></li>
             <li><a href="#funcionarios-cadastrados">Funcionários cadastrados</a></li>
-            <li><a href="#">Demissão</a></li>
+            <li><a href="#cadastro">Cadastro</a></li>
             <li><a href="#">Ações gerais</a></li>
             <li>
               <button id="settings-btn" type="button">               
@@ -49,87 +49,132 @@
         </nav>
     </header>
 
-    <div class="start-container">
-      <div class="agreement-img-box">
-        <img src="/assets/imgs/Agreement-rafiki_simple.png" id = "img-agreement"alt="Employeet - Cadastro de Funcionários">
-      </div>
-
-      <div class="introduction">
-        <h1>A <mark>sua</mark> ferramenta</h1>
-        <h2>para gestão de funcionários!</h2>
-        
-      </div>
-    </div>
-    
-    <div class="empolyees-table-container" id="funcionarios-cadastrados" >
-      <h1>Funcionários cadastrados</h1>
-      <div class="mdc-data-table mdc-theme--primary-bg" id = "employees-table">
-        <div class="mdc-data-table__table-container">
-          <table class="mdc-data-table__table" aria-label="Dessert calories">
-            <thead>
-              <tr class="mdc-data-table__header-row">
-                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Nome</th>
-                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Idade</th>
-                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Salário</th>
-
-              </tr>
-            </thead>
-            <tbody class="mdc-data-table__content">
-              <tr class="mdc-data-table__row">
-                <th class="mdc-data-table__cell" scope="row"></th>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-
-              </tr>
-              <tr class="mdc-data-table__row">
-                <th class="mdc-data-table__cell" scope="row"></th>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-
-              </tr>
-              <tr class="mdc-data-table__row">
-                <th class="mdc-data-table__cell" scope="row"></th>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-
-              </tr>
-              <tr class="mdc-data-table__row">
-                <th class="mdc-data-table__cell" scope="row"></th>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-
-              </tr>
-              <tr class="mdc-data-table__row">
-                <th class="mdc-data-table__cell" scope="row"></th>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-                <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
-
-              </tr>
-
-            </tbody>
-          </table>
+    <main>
+      <div class="start-container">
+        <div class="agreement-img-box">
+          <img src="/assets/imgs/Agreement-rafiki_simple.png" id = "img-agreement"alt="Employeet - Cadastro de Funcionários">
         </div>
+  
+        <div class="introduction">
+          <h1>A <mark>sua</mark> ferramenta</h1>
+          <h2>para gestão de funcionários!</h2>
+          
+        </div>
+      </div>
       
-        <div class="mdc-data-table__pagination">
-          <div class="mdc-data-table__pagination-trailing">
-            <div class="mdc-data-table__pagination-navigation">
-              <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-first-page="true" disabled="true">
-                <div class="mdc-button__icon">first_page</div>
-              </button>
-              <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-prev-page="true" disabled="true">
-                <div class="mdc-button__icon">chevron_left</div>
-              </button>
-              <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-next-page="true" >
-                <div class="mdc-button__icon">chevron_right</div>
-              </button>
-              <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-last-page="true">
-                <div class="mdc-button__icon">last_page</div>
-              </button>
+      <a class="anchor" id="funcionarios-cadastrados"></a>
+      <div class="employees-table-container">
+        <h1>Funcionários cadastrados</h1>
+        <div class="mdc-data-table mdc-theme--primary-bg" id = "employees-table">
+          <div class="mdc-data-table__table-container">
+            <table class="mdc-data-table__table" aria-label="Dessert calories">
+              <thead>
+                <tr class="mdc-data-table__header-row">
+                  <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Nome</th>
+                  <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Idade</th>
+                  <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Salário</th>
+  
+                </tr>
+              </thead>
+              <tbody class="mdc-data-table__content">
+                <tr class="mdc-data-table__row">
+                  <th class="mdc-data-table__cell" scope="row"></th>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+  
+                </tr>
+                <tr class="mdc-data-table__row">
+                  <th class="mdc-data-table__cell" scope="row"></th>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+  
+                </tr>
+                <tr class="mdc-data-table__row">
+                  <th class="mdc-data-table__cell" scope="row"></th>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+  
+                </tr>
+                <tr class="mdc-data-table__row">
+                  <th class="mdc-data-table__cell" scope="row"></th>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+  
+                </tr>
+                <tr class="mdc-data-table__row">
+                  <th class="mdc-data-table__cell" scope="row"></th>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+                  <td class="mdc-data-table__cell mdc-data-table__cell--numeric"></td>
+  
+                </tr>
+  
+              </tbody>
+            </table>
+          </div>
+        
+          <div class="mdc-data-table__pagination">
+            <div class="mdc-data-table__pagination-trailing">
+              <div class="mdc-data-table__pagination-navigation">
+                <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-first-page="true" disabled="true">
+                  <div class="mdc-button__icon">first_page</div>
+                </button>
+                <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-prev-page="true" disabled="true">
+                  <div class="mdc-button__icon">chevron_left</div>
+                </button>
+                <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-next-page="true" >
+                  <div class="mdc-button__icon">chevron_right</div>
+                </button>
+                <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-last-page="true">
+                  <div class="mdc-button__icon">last_page</div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      
+      <a class="anchor-cadastro" id="cadastro"></a>
+      <div class="add-delete-container">
+        <div class="add-employee-container">
+          <div class="add-employee-form">
+            <h1>Cadastrar funcionário</h1>
+            <form>
+              <div class="add-name">
+                <label for="name-field" class="label" id = "name-label">Nome</label>
+                <input type="text" class="text-input" required id="name-field"/>
+              </div>
+              <div class="add-age-salary">
+                <div class="add-age">
+                  <label for="age-field" class="label" id = "age-label">Idade</label>
+                  <input type="text" class="text-input" required id="age-field"/>
+                </div>
+                <div class="add-salary">
+                  <label for="salary-field" class="label" id = "salary-label">Salário</label>
+                  <input type="text" class="text-input" required id="salary-field"/>
+                </div>
+              </div>
+              <input type="submit" value="Cadastrar" class = "submit-button">
+            </form>
+          </div>
+        </div>
+        <div class="delete-employee-container">
+          <div class="delete-employee-form">
+            <h1>Remover funcionário</h1>
+            <form>
+              <div class="delete-name">
+                <label for="delete-field" class="label" id = "delete-label">Código a ser removido</label>
+                <input type="text" class="text-input" required id="delete-field"/>
+              </div>
+              <input type="submit" value="Remover" class = "submit-button">
+            </form>
+          </div>
+        </div>
+
+      </div>
+      
+     
+    </main>
+    
 
 
 

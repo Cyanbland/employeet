@@ -31,14 +31,33 @@ body {
     
 }
 
+a:hover {
+    cursor: pointer;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -150px;
+    visibility: hidden;
+}
+
+a.anchor-cadastro {
+    display: block;
+    position: relative;
+    top: 100px;
+    visibility: hidden;
+}
+
+
 #header-container {
 	display: flex;
     align-items: center;
     justify-items: center;
     width: 100%;
     position: fixed;
-    top: 0
-
+    top: 0;
+    z-index: 1;
 }
 
 #top-navbar {
@@ -86,7 +105,7 @@ body {
 
 
 #top-navbar li {
-    padding: 10px 20px 1px 20px;
+    padding: 10px 20px 0px 20px;
     align-content: center;
     text-align: center;
     margin: 12px;
@@ -219,7 +238,7 @@ body {
     text-shadow: 1px 1px #222831, -1px -1px #444;
 }
 
-.empolyees-table-container {
+.employees-table-container {
     display: flex;
     align-items: center;
     justify-items: center;
@@ -233,13 +252,13 @@ body {
     transition: 0.8s;
 }
 
-.empolyees-table-container:hover {
+.employees-table-container:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.22), 0 4px 8px rgba(0,0,0,0.32);
     flex-basis: 50%;
     margin: 1% 10% 1% 10%;
 }
 
-.empolyees-table-container h1 {
+.employees-table-container h1 {
     color:#393e46;
 	text-decoration: none;
     font-size: 60px;
@@ -262,6 +281,154 @@ body {
 .mds-data-table:hover {
     width: 100%;
 }
+
+.add-delete-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    margin: 15% 2%;
+    transition: 0.8s;
+}
+
+.add-employee-container, .delete-employee-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    background-color: #00adb5;
+    flex-basis: 100%;
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.18), 0 3px 6px rgba(0,0,0,0.24);
+    transition: 0.8s;
+    margin: 2%;
+    height: 700px;
+}
+
+.add-employee-container:hover, .delete-employee-container:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.22), 0 4px 8px rgba(0,0,0,0.32);
+}
+
+.add-employee-form, .delete-employee-form {
+    display: flex;
+    flex-direction: column;
+    transition: 0.8s;
+}
+
+.add-employee-form form, .delete-employee-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; 
+    height: 0;
+    opacity: 0;
+    transition: height 0ms 400ms, opacity 400ms 0ms;
+}
+
+.add-employee-container:hover .add-employee-form form{
+    height: auto;
+    opacity: 1;
+    transition: height 0ms 0ms, opacity 600ms 0ms;
+}
+
+.add-employee-container:hover, .delete-employee-container:hover {
+    flex-basis: 120%;
+}
+
+.delete-employee-container:hover .delete-employee-form form {
+    height: auto;
+    opacity: 1;
+    transition: height 0ms 0ms, opacity 600ms 0ms;
+}
+
+.add-employee-form input, .delete-employee-form input {
+    background-color: #dddddd;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.18), 0 3px 6px rgba(0,0,0,0.24);
+}
+
+.add-employee-form h1, .delete-employee-form h1 {
+    color:#393e46;
+	text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 0px;
+    word-wrap: break-word;
+    line-height: 60px;
+    letter-spacing: 4px;
+    transition: 0.8s;
+    margin: 0px;
+    padding: 0px;
+}
+
+.add-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-age-salary {
+    display: flex;
+}
+
+.add-age, .add-salary {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-name, .add-age, .add-salary, .delete-name, .text-input {
+    outline: none;
+    padding: 16px 10px;
+    font-size: 18px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: 0.8s;
+}
+
+.text-input {
+    border: 1px solid #222831;
+}
+.text-input:focus {
+    border: 2px solid #00adb5;
+}
+
+.label {
+    margin-left: 3%;
+    transition: 0.4s;
+}
+
+.submit-button {
+    outline: none;
+    padding: 16px 10px;
+    width: 40%;
+    align-self: center;
+    margin-top: 5%;
+    border: 1px solid #222831;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.8s;
+}
+
+.submit-button:hover {
+    background-color: #cccccc;
+    transition: 0.8s;
+    border-bottom: 2px solid #222831;
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label  {
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.delete-name {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 
 
 @keyframes sweep {
@@ -326,6 +493,31 @@ body {
         flex-basis: 50%;
     }
 
+    .add-delete-container {
+        flex-direction: column;
+        height: 1200px;
+    }
+
+    .add-employee-container, .delete-employee-container {
+        flex-basis: 80%;
+        width: 80%;
+        margin: 1%;
+    }
+
+    .add-employee-container h1, .delete-employee-container h1 {
+        font-size: 28px;
+        line-height: 0.7em;
+    }
+
+    .add-name, .add-age, .add-salary, .delete-name, .text-input {
+        padding: 8px, 4px;
+        font-size: 16px;
+    }
+
+    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label  {
+        font-size: 20px;
+        transition: 0.4s;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -374,6 +566,10 @@ body {
         font-size: 40px;
     }
 
+    .employees-table-container h1 {
+        font-size: 48px;
+    }
+
 
 }
 
@@ -420,5 +616,9 @@ body {
 
     .introduction h2 {
         font-size: 20px;
+    }
+
+    .employees-table-container h1 {
+        font-size: 32px;
     }
 }
