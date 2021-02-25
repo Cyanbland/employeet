@@ -3921,15 +3921,22 @@ __export(__webpack_require__(/*! ./foundation */ "./packages/mdc-menu/foundation
 const mdcMenu = require('@material/menu');
 const MDCMenu = mdcMenu.MDCMenu;
 
-const menu = new MDCMenu(document.querySelector('.mdc-menu'));
+var menu = new MDCMenu(document.querySelector('.mdc-menu'));
 menu.open = false;
+
+var status = menu.open;
 
 const preferencesBtn = document.getElementById("settings-btn");
 
 preferencesBtn.addEventListener("click", function() {
-    menu.open = !menu.open;
+    if (status === true) {
+        status = false;
+    }
+    else {
+        status = true;
+    }
+    menu.open = status;
 
-    console.log(menu.open)
 });
 
 
