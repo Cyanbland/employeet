@@ -7,6 +7,9 @@
     <link rel="icon" href="assets/icons/handshake.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
     <title>Employeet - Cadastro de Funcionários</title>
 
 </head>
@@ -24,12 +27,24 @@
             <li><a href="#">Demissão</a></li>
             <li><a href="#">Ações gerais</a></li>
             <li>
-              <button id="settings-btn">               
-                <span class="material-icons" id="settings-icon">settings
-                </span>
+              <button id="settings-btn" type="button">               
+                <span class="material-icons" id="settings-icon">settings</span>
+                <div id="toolbar" class="toolbar mdc-menu-surface--anchor">
+                  <div class="mdc-menu mdc-menu-surface">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                      <li>
+                        <ul class="mdc-menu__selection-group">
+                          <li class="mdc-list-item" role="menuitem">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__graphic mdc-menu__selection-group-icon"></span>
+                            <span class="mdc-list-item__text">Auto-update</span>
+                            <input type = "checkbox" id = "Option">
+                          </li>
+                    </ul>
+                  </div>
+                </div>
               </button>
             </li>
-  
           </ul>
         </nav>
     </header>
@@ -40,11 +55,126 @@
       </div>
 
       <div class="introduction">
-        <h1 id="intro-title">A <mark>sua</mark> ferramenta</h1>
-        <h2 id="intro-subtitle">para gestão de funcionários!</h2>
+        <h1>A <mark>sua</mark> ferramenta</h1>
+        <h2>para gestão de funcionários!</h2>
         
       </div>
     </div>
+    
+    <div class="empolyees-table-container">
+      <h1>Funcionários cadastrados</h1>
+      <div class="mdc-data-table">
+        <div class="mdc-data-table__table-container">
+          <table class="mdc-data-table__table" aria-label="Dessert calories">
+            <thead>
+              <tr class="mdc-data-table__header-row">
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Nome</th>
+                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Idade</th>
+                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Salário</th>
 
+              </tr>
+            </thead>
+            <tbody class="mdc-data-table__content">
+              <tr class="mdc-data-table__row">
+                <th class="mdc-data-table__cell" scope="row">Frozen yogurt</th>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">24</td>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">4.0</td>
+
+              </tr>
+              <tr class="mdc-data-table__row">
+                <th class="mdc-data-table__cell" scope="row">Ice cream sandwich</th>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">37</td>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">4.33333333333</td>
+
+              </tr>
+              <tr class="mdc-data-table__row">
+                <th class="mdc-data-table__cell" scope="row">Eclair</th>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">24</td>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">6.0</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="mdc-data-table__pagination">
+          <div class="mdc-data-table__pagination-trailing">
+            <div class="mdc-data-table__pagination-rows-per-page">
+              <div class="mdc-data-table__pagination-rows-per-page-label">
+                Colunas por página
+              </div>
+      
+              <div class="mdc-select mdc-select--outlined mdc-select--no-label mdc-data-table__pagination-rows-per-page-select">
+                <div class="mdc-select__anchor" role="button" aria-haspopup="listbox"
+                      aria-labelledby="demo-pagination-select" tabindex="0">
+                  <span class="mdc-select__selected-text-container">
+                    <span id="demo-pagination-select" class="mdc-select__selected-text">10</span>
+                  </span>
+                  <span class="mdc-select__dropdown-icon">
+                    <svg
+                        class="mdc-select__dropdown-icon-graphic"
+                        viewBox="7 10 10 5">
+                      <polygon
+                          class="mdc-select__dropdown-icon-inactive"
+                          stroke="none"
+                          fill-rule="evenodd"
+                          points="7 10 12 15 17 10">
+                      </polygon>
+                      <polygon
+                          class="mdc-select__dropdown-icon-active"
+                          stroke="none"
+                          fill-rule="evenodd"
+                          points="7 15 12 10 17 15">
+                      </polygon>
+                    </svg>
+                  </span>
+                  <span class="mdc-notched-outline mdc-notched-outline--notched">
+                    <span class="mdc-notched-outline__leading"></span>
+                    <span class="mdc-notched-outline__trailing"></span>
+                  </span>
+                </div>
+      
+                <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth" role="listbox">
+                  <ul class="mdc-list">
+                    <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" role="option" data-value="10">
+                      <span class="mdc-list-item__text">10</span>
+                    </li>
+                    <li class="mdc-list-item" role="option" data-value="25">
+                      <span class="mdc-list-item__text">25</span>
+                    </li>
+                    <li class="mdc-list-item" role="option" data-value="100">
+                      <span class="mdc-list-item__text">100</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+            <div class="mdc-data-table__pagination-navigation">
+              <div class="mdc-data-table__pagination-total">
+                1‑10 of 100
+              </div>
+              <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-first-page="true" disabled>
+                <div class="mdc-button__icon">first_page</div>
+              </button>
+              <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-prev-page="true" disabled>
+                <div class="mdc-button__icon">chevron_left</div>
+              </button>
+              <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-next-page="true">
+                <div class="mdc-button__icon">chevron_right</div>
+              </button>
+              <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-last-page="true">
+                <div class="mdc-button__icon">last_page</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script src="/src/scripts/compiled.js"></script>
 </body>
 </html>

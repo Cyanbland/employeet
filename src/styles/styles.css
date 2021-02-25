@@ -32,6 +32,8 @@ body {
     align-items: center;
     justify-items: center;
     width: 100%;
+    position: fixed;
+    top: 0
 
 }
 
@@ -48,7 +50,7 @@ body {
 
 .left-side {
     display: flex;
-    padding-right: 50%;
+    padding-right: 40%;
     margin: 0px 10px 0px 10px;
     align-items: center;
     margin-left: 10px;
@@ -112,8 +114,20 @@ body {
     background-color: Transparent;
     margin: 0px;
     border: 0px;
-    padding: 2px;
+    padding: 1px;
     outline: none;
+}
+
+#settings-btn input {
+    margin-left: 15px;
+}
+
+#settings-btn li:hover, .mdc-list-item__text:hover, .mdc-menu:hover  {
+    background-color: #eeeeee;
+}
+
+#settings-btn ul:hover {
+    border: 0px;
 }
 
 #settings-icon {
@@ -163,7 +177,12 @@ body {
     animation-timing-function: cubic-bezier(.2,.3,.9,1);
     animation-fill-mode: forwards;
     transition: 0.9s;
-    
+}
+
+.introduction:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.22), 0 4px 8px rgba(0,0,0,0.32);
+    flex-basis: 45%;
+    transition: 0.3;
 }
 
 .introduction h1, h2 {
@@ -181,13 +200,11 @@ body {
 }
 
 .introduction h2 {
-    font-size: 50px;
-    letter-spacing: 2px;
+    font-size: 48px;
+    letter-spacing: 1px;
     line-height: 60px;
     margin-top: 2%;
     margin-bottom: 6%;
-
-    
 }
 
 .introduction mark {
@@ -196,8 +213,15 @@ body {
     font-style: italic;
     letter-spacing: 3px;
     text-shadow: 1px 1px #222831, -1px -1px #444;
+}
 
-    
+.empolyees-table-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    margin-top: 3%;
+    flex-direction: column;
 }
 
 
@@ -242,9 +266,24 @@ body {
         margin: 0px, 10px, 0px, 10px;
     }
 
+    .introduction h1 {
+        font-size: 40px;
+        margin: 2%;
+    }
 
+    .introduction h2 {
+        font-size: 32px;
+        margin: 2%;
+    }
 
-    
+    .start-container {
+        margin-top: 60px;
+    }
+
+    .agreement-img-box, .introduction {
+        flex-basis: 50%;
+    }
+
 }
 
 @media screen and (max-width: 992px) {
@@ -284,13 +323,15 @@ body {
         font-size: 14px;
     }
 
-    .introduction h1, h2 {
+    .introduction h1, .introduction h2 {
         font-size: 50px;
+
     }
 
     .introduction h2 {
         font-size: 40px;
     }
+
 
 }
 
@@ -330,8 +371,9 @@ body {
         font-size: 18px;
     }
 
-    .introduction h1, h2 {
+    .introduction h1, .introduction h2 {
         font-size: 30px;
+        line-height: 30px;
     }
 
     .introduction h2 {
