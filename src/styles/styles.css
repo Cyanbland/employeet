@@ -282,6 +282,10 @@ body {
     .left-side {
         padding-right: 14%;
     }
+
+    .introduction {
+        margin-left: 2%;
+    }
     
 }
 
