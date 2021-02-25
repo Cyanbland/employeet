@@ -13,6 +13,10 @@ COLOR PALLETE
 
 
 */
+:root {
+    --mdc-theme-primary: #dddddd;
+    --mdc-theme-secondary: #222831;
+  }
 
 html {
     scroll-behavior: smooth !important;
@@ -220,10 +224,44 @@ body {
     align-items: center;
     justify-items: center;
     justify-content: space-between;
-    margin-top: 3%;
+    margin: 3% 20% 3% 20%;
     flex-direction: column;
+    background-color: #00adb5;
+    flex-basis: 50%;
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.18), 0 3px 6px rgba(0,0,0,0.24);
+    transition: 0.8s;
 }
 
+.empolyees-table-container:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.22), 0 4px 8px rgba(0,0,0,0.32);
+    flex-basis: 50%;
+    margin: 1% 10% 1% 10%;
+}
+
+.empolyees-table-container h1 {
+    color:#393e46;
+	text-decoration: none;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 0px;
+    word-wrap: break-word;
+    line-height: 60px;
+    letter-spacing: 4px;
+    transition: 0.8s;
+}
+
+.mdc-data-table {
+    margin-bottom: 6%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.18), 0 3px 6px rgba(0,0,0,0.24);
+    width: 80%;
+    transition: 0.8s;
+}
+
+.mds-data-table:hover {
+    width: 100%;
+}
 
 
 @keyframes sweep {

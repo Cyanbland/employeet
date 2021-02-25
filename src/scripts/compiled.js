@@ -3939,5 +3939,27 @@ preferencesBtn.addEventListener("click", function() {
 
 });
 
+const employeesTable = document.getElementById("employees-table");
+populateTableWithEmployees();
+
+employeesTable.addEventListener("mouseover", function() {
+    populateTableWithEmployees();
+});
+
+function populateTableWithEmployees() {
+    for (let i = 0; i < localStorage.length; i++) {
+        let currentRetrievedObject = localStorage.getItem(i + 1);
+        let currentObj = JSON.parse(currentRetrievedObject);
+        if (currentRetrievedObject !== null) {
+            let id = currentObj.id;
+            let name = currentObj.employee_name;
+            let age = currentObj.employee_age;
+            let salary = currentObj.employee_salary;
+        }
+    }
+    console.log("Carregou")
+
+}
+
 
 },{"@material/menu":1}]},{},[2]);

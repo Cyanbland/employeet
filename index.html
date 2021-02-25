@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="src/styles/styles.css">
     <link rel="icon" href="assets/icons/handshake.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/styles/styles.css">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
     <title>Employeet - Cadastro de Funcionários</title>
@@ -23,7 +23,7 @@
             </div>
 
             <li><a href="#">Início</a></li>
-            <li><a href="#">Funcionários cadastrados</a></li>
+            <li><a href="#funcionarios-cadastrados">Funcionários cadastrados</a></li>
             <li><a href="#">Demissão</a></li>
             <li><a href="#">Ações gerais</a></li>
             <li>
@@ -61,16 +61,16 @@
       </div>
     </div>
     
-    <div class="empolyees-table-container">
+    <div class="empolyees-table-container" id="funcionarios-cadastrados" >
       <h1>Funcionários cadastrados</h1>
-      <div class="mdc-data-table">
+      <div class="mdc-data-table mdc-theme--primary-bg" id = "employees-table">
         <div class="mdc-data-table__table-container">
           <table class="mdc-data-table__table" aria-label="Dessert calories">
             <thead>
               <tr class="mdc-data-table__header-row">
                 <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Nome</th>
                 <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Idade</th>
-                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Salário</th>
+                <th class="mdc-data-table__header-cell mdc-data-table__header-cell--numeric" role="columnheader" scope="col">Salário (R$)</th>
 
               </tr>
             </thead>
@@ -93,67 +93,26 @@
                 <td class="mdc-data-table__cell mdc-data-table__cell--numeric">6.0</td>
 
               </tr>
+              <tr class="mdc-data-table__row">
+                <th class="mdc-data-table__cell" scope="row">Eclair</th>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">24</td>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">6.0</td>
+
+              </tr>
+              <tr class="mdc-data-table__row">
+                <th class="mdc-data-table__cell" scope="row">Eclair</th>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">24</td>
+                <td class="mdc-data-table__cell mdc-data-table__cell--numeric">6.0</td>
+
+              </tr>
+
             </tbody>
           </table>
         </div>
       
         <div class="mdc-data-table__pagination">
           <div class="mdc-data-table__pagination-trailing">
-            <div class="mdc-data-table__pagination-rows-per-page">
-              <div class="mdc-data-table__pagination-rows-per-page-label">
-                Colunas por página
-              </div>
-      
-              <div class="mdc-select mdc-select--outlined mdc-select--no-label mdc-data-table__pagination-rows-per-page-select">
-                <div class="mdc-select__anchor" role="button" aria-haspopup="listbox"
-                      aria-labelledby="demo-pagination-select" tabindex="0">
-                  <span class="mdc-select__selected-text-container">
-                    <span id="demo-pagination-select" class="mdc-select__selected-text">10</span>
-                  </span>
-                  <span class="mdc-select__dropdown-icon">
-                    <svg
-                        class="mdc-select__dropdown-icon-graphic"
-                        viewBox="7 10 10 5">
-                      <polygon
-                          class="mdc-select__dropdown-icon-inactive"
-                          stroke="none"
-                          fill-rule="evenodd"
-                          points="7 10 12 15 17 10">
-                      </polygon>
-                      <polygon
-                          class="mdc-select__dropdown-icon-active"
-                          stroke="none"
-                          fill-rule="evenodd"
-                          points="7 15 12 10 17 15">
-                      </polygon>
-                    </svg>
-                  </span>
-                  <span class="mdc-notched-outline mdc-notched-outline--notched">
-                    <span class="mdc-notched-outline__leading"></span>
-                    <span class="mdc-notched-outline__trailing"></span>
-                  </span>
-                </div>
-      
-                <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth" role="listbox">
-                  <ul class="mdc-list">
-                    <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" role="option" data-value="10">
-                      <span class="mdc-list-item__text">10</span>
-                    </li>
-                    <li class="mdc-list-item" role="option" data-value="25">
-                      <span class="mdc-list-item__text">25</span>
-                    </li>
-                    <li class="mdc-list-item" role="option" data-value="100">
-                      <span class="mdc-list-item__text">100</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-      
             <div class="mdc-data-table__pagination-navigation">
-              <div class="mdc-data-table__pagination-total">
-                1‑10 of 100
-              </div>
               <button class="mdc-icon-button material-icons mdc-data-table__pagination-button" data-first-page="true" disabled>
                 <div class="mdc-button__icon">first_page</div>
               </button>
@@ -174,7 +133,7 @@
 
 
 
-
+    <script src="/src/scripts/rest_client.js"></script>
     <script src="/src/scripts/compiled.js"></script>
 </body>
 </html>
