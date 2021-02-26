@@ -450,7 +450,7 @@ a.anchor-alterar {
     border-top-right-radius: 10px;
 }
 
-.add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label {
+.add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label, .update-id:hover #id-updatable-label {
     font-size: 20px;
     transition: 0.4s;
 }
@@ -527,6 +527,7 @@ a.anchor-alterar {
 .radio-area label:hover {
     color: #00adb5;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 
@@ -578,11 +579,11 @@ a.anchor-alterar {
     width: 100%;
 }
 
-#id-update-label {
+#id-update-label, #id-updatable-label {
     font-size: 18px;
 }
 
-#id-uptdate-field {
+#id-update-field, #id-updatable-field {
     margin-bottom: 5%;
 }
 
@@ -590,7 +591,7 @@ a.anchor-alterar {
     height: 100px;
     width: 100%;
     background-color: #222831;
-    margin-top: 10%;
+    margin-top: 2%;
 }
 
 .footer p {
@@ -600,15 +601,6 @@ a.anchor-alterar {
     position: relative;
     top: 40px
 }
-
-
-
-
-
-
-
-
-
 
 
 @keyframes sweep {
@@ -701,7 +693,7 @@ a.anchor-alterar {
         font-size: 16px;
     }
 
-    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label{
+    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label, .update-id:hover #id-updatable-label{
         font-size: 20px;
         transition: 0.4s;
     }
@@ -774,7 +766,7 @@ a.anchor-alterar {
         margin-left: 15%;
     }
 
-    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label  {
+    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label, .update-id:hover #id-updatable-label  {
         font-size: 16px;
         transition: 0.4s;
     }
@@ -786,8 +778,16 @@ a.anchor-alterar {
         align-items: center;
     }
 
-    .labels label{
-        margin-left: 2%
+    .labels label {
+        margin-left: 2%;
+    }
+
+    .submit-button {
+        font-size: 12px;
+    }
+
+    .footer {
+        height: 200px;
     }
 
 
@@ -844,5 +844,9 @@ a.anchor-alterar {
 
     .labels label{
         margin:4% 2%;
+    }
+
+    .footer {
+        height: 300px;
     }
 }

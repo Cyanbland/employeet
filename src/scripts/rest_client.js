@@ -174,9 +174,6 @@ function setupDeleteEmployeePostRequest() {
             idToBeDeleted = deleteField.value;
         
             createDeleteEmployeeRequest();
-            
-            console.log("Submitted")
-
         });
     }
 }
@@ -224,9 +221,169 @@ function storeDeletedData(data) {
     }
 }
 
-//update not availiable on API
+const nameRadio = document.getElementById("name-radio");
+const salaryRadio = document.getElementById("salary-radio");
+const ageRadio = document.getElementById("age-radio");
 
-//LEMBRAR DE MUDAR O TYPE DO INPUT E O INNERHTML CONFORME O RADIO BTN
+const nameLabel = document.getElementById("name-update-label");
+const salaryLabel = document.getElementById("salary-update-label");
+const ageLabel = document.getElementById("age-update-label");
+
+const updatableLabel = document.getElementById("id-updatable-label");
+const updatableField = document.getElementById("update-field");
+const updateFormBtn = document.getElementById("update-form");
+
+const idField = document.getElementById("id-update-field");
+const updatedContentField = document.getElementById("update-field");
+
+var currentUpdate = "";
+
+
+nameRadio.addEventListener("click", function() {
+    let status = nameRadio.checked;
+
+    if (status === false) {
+        nameRadio.checked = !status;
+        updatableLabel.innerHTML = "Nome";
+        updatableField.setAttribute("type", "text");
+        updatableField.removeAttribute("disabled");
+        updatableField.removeAttribute("max");
+        updatableField.removeAttribute("min");
+    }
+    salaryRadio.checked = false;
+    ageRadio.checked = false;
+    currentUpdate = "name";
+});
+
+nameLabel.addEventListener("click", function() {
+    let status = nameRadio.checked;
+
+    if (status === false) {
+        nameRadio.checked = !status;
+        updatableLabel.innerHTML = "Nome";
+        updatableField.setAttribute("type", "text");
+        updatableField.removeAttribute("disabled");
+        updatableField.removeAttribute("max");
+        updatableField.removeAttribute("min");
+    }
+    salaryRadio.checked = false;
+    ageRadio.checked = false;
+    currentUpdate = "name";
+});
+
+salaryRadio.addEventListener("click", function() {
+    let status = salaryRadio.checked;
+
+    if (status === false) {
+        salaryRadio.checked = !status;
+        updatableLabel.innerHTML = "Salário";
+        updatableField.setAttribute("type", "number");
+        updatableField.setAttribute("min", "1");
+        updatableField.removeAttribute("disabled");
+        updatableField.removeAttribute("max");
+    }
+    nameRadio.checked = false;
+    ageRadio.checked = false;
+    currentUpdate = "salary";
+});
+
+salaryLabel.addEventListener("click", function() {
+    let status = salaryRadio.checked;
+
+    if (status === false) {
+        salaryRadio.checked = !status;
+        updatableLabel.innerHTML = "Salário";
+        updatableField.setAttribute("type", "number");
+        updatableField.setAttribute("min", "1");
+        updatableField.removeAttribute("disabled");
+        updatableField.removeAttribute("max");
+
+    }
+    nameRadio.checked = false;
+    ageRadio.checked = false;
+    currentUpdate = "salary";
+});
+
+ageRadio.addEventListener("click", function() {
+    let status = ageRadio.checked;
+
+    if (status === false) {
+        ageRadio.checked = !status;
+        updatableLabel.innerHTML = "Idade";
+        updatableField.setAttribute("type", "number");
+        updatableField.setAttribute("min", "14");
+        updatableField.setAttribute("max", "99");
+        updatableField.removeAttribute("disabled");
+    }
+    nameRadio.checked = false;
+    salaryRadio.checked = false;
+    currentUpdate = "age";
+});
+
+ageLabel.addEventListener("click", function() {
+    let status = ageRadio.checked;
+
+    if (status === false) {
+        ageRadio.checked = !status;
+        updatableLabel.innerHTML = "Idade";
+        updatableField.setAttribute("type", "number");
+        updatableField.setAttribute("min", "14");
+        updatableField.setAttribute("max", "99");
+        updatableField.removeAttribute("disabled");
+    }
+    nameRadio.checked = false;
+    salaryRadio.checked = false;
+    currentUpdate = "age";
+});
+
+updateFormBtn.addEventListener("submit", function() {
+    if (!updatableField.hasAttribute("disabled")) {
+        let idToUpdate = idField.value;
+        let newUpdatedValue = updatedContentField.value;
+
+        updateLocalEmployee(idToUpdate, currentUpdate, newUpdatedValue);
+    }
+    else {
+        alert("Selecione algo para alterar!");
+    }
+
+})
+
+
+
+
+//update not availiable on API, so the update method applies only locally
+function updateLocalEmployee(employeeId, fieldToBeUpdated, updatedData) {
+    if (localStorage.getItem(employeeId) !== null) {
+        let currentEmployeeObj = JSON.parse(localStorage.getItem(employeeId));
+
+        if (fieldToBeUpdated == "name") {
+            currentEmployeeObj.employee_name =  updatedData;
+        }
+
+        else if (fieldToBeUpdated == "salary") {
+            currentEmployeeObj.employee_salary = updatedData;
+        }
+
+        else if (fieldToBeUpdated == "age") {
+            currentEmployeeObj.employee_age = updatedData;
+        }
+
+        else {
+            console.error(`${fieldToBeUpdated} is not a valid field`);
+        }
+
+        localStorage.setItem(employeeId, JSON.stringify(currentEmployeeObj))
+    }
+    else {
+        alert(`O funcionário ${employeeId} não consta nos registros!`);
+    }
+}
+
+
+
+
+
 
 
 
