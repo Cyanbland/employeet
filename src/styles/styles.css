@@ -789,10 +789,7 @@ a.anchor-alterar {
     .footer {
         height: 200px;
     }
-
-
 }
-
 
 
 @media screen and (max-width: 600px) {
@@ -843,7 +840,7 @@ a.anchor-alterar {
     }
 
     .labels label{
-        margin:4% 2%;
+        margin:18% 2%;
     }
 
     .footer {
