@@ -3941,6 +3941,10 @@ var status = menu.open;
 
 handlePages();
 
+setInterval(function() {
+    handlePages();
+}, 10000)
+
 preferencesBtn.addEventListener("click", function() {
     if (status === true) {
         status = false;

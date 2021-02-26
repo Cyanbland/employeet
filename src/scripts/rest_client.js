@@ -37,7 +37,6 @@ function setupRegisterEmployeePostRequest() {
     }
 }
 
-
 function createRegisterEmployeePostRequest() {
     content = {
         "name": name,
@@ -68,7 +67,7 @@ function handleRegisterEmployeePostRequest() {
         createRegisterEmployeePostRequest();
     }
     else if (postRequest.readyState == 4) {
-        console.error("Error: " + request.status + " - " + request.statusText + " - Trying again!");
+        console.error("Error: " + postRequest.status + " - " + postRequest.statusText + " - Trying again!");
         createRegisterEmployeePostRequest();
     }
 
@@ -158,4 +157,73 @@ function clearRegisterFields() {
     ageInput.value = "";
     salaryInput.value = "";
 }
+
+
+const deleteBtn = document.getElementById('delete-btn');
+const deleteForm = document.getElementById('delete-form');
+const deleteField = document.getElementById('delete-field');
+
+var idToBeDeleted = 0;
+var deleteRequest = new XMLHttpRequest();
+
+setupDeleteEmployeePostRequest();
+
+function setupDeleteEmployeePostRequest() {
+    if (!deleteForm.hasAttribute("submit")) {
+        deleteForm.addEventListener("submit", function(){
+            idToBeDeleted = deleteField.value;
+        
+            createDeleteEmployeeRequest();
+            
+            console.log("Submitted")
+
+        });
+    }
+}
+
+function createDeleteEmployeeRequest() {
+    deleteRequest = new XMLHttpRequest();
+
+    deleteRequest.addEventListener("readystatechange", handleEmployeeDeleteRequest, false);
+    deleteRequest.open('DELETE', `http://dummy.restapiexample.com/api/v1/delete/${idToBeDeleted}`, true);
+
+    deleteRequest.send();
+}
+
+function handleEmployeeDeleteRequest() {
+    var deleteResponseData = [];
+
+    if (deleteRequest.readyState == 4 && deleteRequest.status == 200) {
+        var response = deleteRequest.responseText;
+        deleteResponseData.push(JSON.parse(response));
+    }
+    else if (deleteRequest.readyState == 4 && deleteRequest.status == 429) {
+        console.error("Too many requests: " + deleteRequest.status + " - " + deleteRequest.statusText + " - Trying again!");
+        createDeleteEmployeeRequest();
+    }
+    else if (deleteRequest.readyState == 4) {
+        console.error("Error: " + deleteRequest.status + " - " + deleteRequest.statusText + " - Trying again!");
+        createDeleteEmployeeRequest();
+    }
+
+    storeDeletedData(deleteResponseData);
+}
+
+function storeDeletedData(data) {
+    if (data.length > 0) {
+        if (localStorage.getItem(idToBeDeleted) !== null) {
+            localStorage.removeItem(idToBeDeleted);
+            console.log(idToBeDeleted + " was deleted!")
+        }
+        else {
+            alert(`O funcionário ${idToBeDeleted} não consta nos registros!`);
+        }
+    }
+    else {
+        console.error("Error: Can´t store data locally because the client wasn´t able to fetch any data!")
+    }
+}
+
+
+
 

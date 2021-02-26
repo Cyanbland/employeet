@@ -160,16 +160,15 @@
         <div class="delete-employee-container">
           <div class="delete-employee-form">
             <h1>Remover funcionário</h1>
-            <form>
+            <form id = "delete-form" onsubmit="return false">
               <div class="delete-name">
                 <label for="delete-field" class="label" id = "delete-label">Código a ser removido</label>
                 <input type="number" min="1" class="text-input" required id="delete-field"/>
               </div>
-              <input type="submit" value="Remover" class = "submit-button">
+              <input type="submit" value="Remover" class = "submit-button" id = "delete-btn">
             </form>
           </div>
         </div>
-
       </div>
       
      
