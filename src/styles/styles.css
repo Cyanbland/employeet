@@ -370,6 +370,14 @@ a.anchor-cadastro {
     display: flex;
 }
 
+.add-age {
+    flex-basis: 30%
+}
+
+.add-salary {
+    flex-basis: 70%;
+}
+
 .add-age, .add-salary {
     display: flex;
     flex-direction: column;

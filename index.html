@@ -138,7 +138,7 @@
         <div class="add-employee-container">
           <div class="add-employee-form">
             <h1>Cadastrar funcionário</h1>
-            <form>
+            <form id = "register-form">
               <div class="add-name">
                 <label for="name-field" class="label" id = "name-label">Nome</label>
                 <input type="text" class="text-input" required id="name-field"/>
@@ -146,14 +146,14 @@
               <div class="add-age-salary">
                 <div class="add-age">
                   <label for="age-field" class="label" id = "age-label">Idade</label>
-                  <input type="text" class="text-input" required id="age-field"/>
+                  <input type="number" min="14" max="99" class="text-input" required id="age-field"/>
                 </div>
                 <div class="add-salary">
                   <label for="salary-field" class="label" id = "salary-label">Salário</label>
-                  <input type="text" class="text-input" required id="salary-field"/>
+                  <input type="number" min="0" class="text-input" required id="salary-field"/>
                 </div>
               </div>
-              <input type="submit" value="Cadastrar" class = "submit-button">
+              <input type="submit" value="Cadastrar" class = "submit-button" id = "register-btn">
             </form>
           </div>
         </div>
@@ -163,7 +163,7 @@
             <form>
               <div class="delete-name">
                 <label for="delete-field" class="label" id = "delete-label">Código a ser removido</label>
-                <input type="text" class="text-input" required id="delete-field"/>
+                <input type="number" min="1" class="text-input" required id="delete-field"/>
               </div>
               <input type="submit" value="Remover" class = "submit-button">
             </form>
