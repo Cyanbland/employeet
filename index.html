@@ -24,8 +24,8 @@
 
             <li><a href="#">Início</a></li>
             <li><a href="#funcionarios-cadastrados">Funcionários cadastrados</a></li>
-            <li><a href="#cadastro">Cadastro</a></li>
-            <li><a href="#">Ações gerais</a></li>
+            <li><a href="#cadastro">Cadastro e remoção</a></li>
+            <li><a href="#alterar">Alterar</a></li>
             <li>
               <button id="settings-btn" type="button">               
                 <span class="material-icons" id="settings-icon">settings</span>
@@ -170,9 +170,39 @@
           </div>
         </div>
       </div>
-      
-     
+
+      <a class="anchor-alterar" id="alterar"></a>
+      <div class="update-container">
+        <div class="card-area">
+          <h1 id = "card-title">Alterar dados</h1>
+          <div class="update-id">
+            <form id = "update-form" onsubmit="return false">
+              <label for="id-uptdate-field" class="label" id = "id-update-label">Código do funcionário a ser alterado</label>
+              <input type="number" min="1" class="text-input" required id = "id-uptdate-field"/>
+              <label for="update-field" class="label" id = "id-update-label">Selecione algo para alterar</label>
+              <input type="number" min="1" class="text-input" required id = "update-field"/>
+              <input type="submit" value="Alterar" class = "submit-button" id = "update-btn">
+            </form>
+          </div>
+        </div>
+        <div class="radio-area">
+          <div class="radios">
+            <input type="radio" id="name-radio" name="name" value="name-value">
+            <input type="radio" id="salary-radio" name="salary" value="salary-value">
+            <input type="radio" id="age-radio" name="age" value="age-value">
+          </div>
+          <div class="labels">
+            <label for="name-value">Nome</label>
+            <label for="salary-value">Salário</label>
+            <label for="age-value">Idade</label>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <footer class="footer">
+      <p>Desenvolvido por Paulo Rubens de Moraes Leme Júnior - BCC FURB 2021</p>
+    </footer>
     
 
 

@@ -31,6 +31,24 @@ body {
     
 }
 
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding: 6px;
+    border: 2px solid #222831;
+    background-color: #cccccc;
+    border-radius: 50%;
+    outline: none;
+}
+
+input[type="radio"]:checked {
+    background-color: #00adb5;
+}
+
 a:hover {
     cursor: pointer;
 }
@@ -46,6 +64,13 @@ a.anchor-cadastro {
     display: block;
     position: relative;
     top: 100px;
+    visibility: hidden;
+}
+
+a.anchor-alterar {
+    display: block;
+    position: relative;
+    top: -150px;
     visibility: hidden;
 }
 
@@ -134,7 +159,7 @@ a.anchor-cadastro {
 }
 
 #settings-btn {
-    background-color: Transparent;
+    background-color: transparent;
     margin: 0px;
     border: 0px;
     padding: 1px;
@@ -425,15 +450,162 @@ a.anchor-cadastro {
     border-top-right-radius: 10px;
 }
 
-.add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label  {
+.add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label {
     font-size: 20px;
     transition: 0.4s;
 }
 
-.delete-name {
+.delete-name, .update-id {
     display: flex;
     flex-direction: column;
 }
+
+.update-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    transition: 0.8s;
+    margin: 2%;
+    margin-right: 0%;
+    height: 700px;
+}
+
+.radio-area {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 20%;
+    margin-right: 0%;
+    background-color: #393e46;
+    border-radius: 16px;
+    height: 500px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.20), 0 3px 6px rgba(0,0,0,0.28);
+    transition: 0.8s;
+}
+
+.radio-area:hover {
+    flex-basis: 30%;
+    transition: 0.8s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.26), 0 4px 8px rgba(0,0,0,0.34);
+    margin-right: 1%;
+}
+
+.radios {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid #dddddd;
+    height: 500px;
+    font-size: 32px;
+    padding-left: 5%;
+    margin-left: 4%;
+    font-weight: 500;
+    color: #eeeeee;
+    justify-content: center;
+    letter-spacing: 4px;
+}
+
+.radio-area label {
+    margin: 30% 20% 30% 50%;
+}
+
+.radio-area input {
+    margin: 37% 0%;
+    padding: 0px;
+}
+
+
+.radio-area label:hover {
+    color: #00adb5;
+    transition: 0.4s;
+}
+
+
+.card-area {
+    display: flex;
+    flex-basis: 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    background-color: #00adb5;
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.18), 0 3px 6px rgba(0,0,0,0.24);
+    transition: 0.8s;
+    margin: 2%;
+    height: 700px;
+}
+
+.card-area:hover {
+    flex-basis: 70%;
+    transition: 0.8s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.26), 0 4px 8px rgba(0,0,0,0.34);
+}
+.card-area h1 {
+    color:#393e46;
+	text-decoration: none;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 0px;
+    word-wrap: break-word;
+    line-height: 60px;
+    letter-spacing: 4px;
+    transition: 0.8s;
+    margin: 0px;
+    padding: 0px;
+}
+
+.update-id {
+    margin: 5%;
+    width: 50%;
+}
+
+#update-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+#id-update-label {
+    font-size: 18px;
+}
+
+#id-uptdate-field {
+    margin-bottom: 5%;
+}
+
+.footer {
+    height: 100px;
+    width: 100%;
+    background-color: #222831;
+    margin-top: 10%;
+}
+
+.footer p {
+    margin-top: 30%;
+    color: #dddddd;
+    margin-left: 70%;
+    position: relative;
+    top: 40px
+}
+
+
+
+
+
+
 
 
 
@@ -462,6 +634,13 @@ a.anchor-cadastro {
         margin-left: 2%;
     }
     
+    .radio-area {
+        flex-basis: 40%;
+    }
+    
+    .radio-area:hover {
+        flex-basis: 50%;
+    }
 }
 
 
@@ -522,10 +701,16 @@ a.anchor-cadastro {
         font-size: 16px;
     }
 
-    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label  {
+    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label{
         font-size: 20px;
         transition: 0.4s;
     }
+
+    .labels {
+        font-size: 20px;
+        margin: 2%;
+    }
+
 }
 
 @media screen and (max-width: 992px) {
@@ -589,9 +774,20 @@ a.anchor-cadastro {
         margin-left: 15%;
     }
 
-    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label  {
+    .add-name:hover #name-label, .add-age:hover #age-label, .add-salary:hover #salary-label, .delete-name:hover #delete-label, .update-id:hover #id-update-label  {
         font-size: 16px;
         transition: 0.4s;
+    }
+
+    .update-id {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .labels label{
+        margin-left: 2%
     }
 
 
@@ -644,5 +840,9 @@ a.anchor-cadastro {
 
     .employees-table-container h1 {
         font-size: 32px;
+    }
+
+    .labels label{
+        margin:4% 2%;
     }
 }

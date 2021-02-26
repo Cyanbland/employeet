@@ -224,6 +224,10 @@ function storeDeletedData(data) {
     }
 }
 
+//update not availiable on API
+
+//LEMBRAR DE MUDAR O TYPE DO INPUT E O INNERHTML CONFORME O RADIO BTN
+
 
 
 
